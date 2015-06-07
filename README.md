@@ -4,6 +4,10 @@ Advanced Autocomplete
 ExtPlug plugin that adds additional autocomplete suggestions based on room
 settings, for example to provide autocompletion for bot commands.
 
+| ![Example using basicBot commands](http://i.imgur.com/hBMuB5F.png) |
+|----------------|
+| Example using basicBot commands. |
+
 ## Installation
 
 You can install this plugin by going to your ExtPlug settings menu, pressing
