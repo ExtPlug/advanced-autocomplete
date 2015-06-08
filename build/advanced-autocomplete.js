@@ -62,11 +62,13 @@ define('extplug/advanced-autocomplete/main',['require','exports','module','meld'
           if (start !== -1) {
             (function () {
               _this.type = o.trigger;
-              var typed = message.substr(start + 1);
+              var typed = message.substr(start + o.trigger.length);
               if (typed.length >= 1) {
                 _this.suggestionObjects = o.suggestions.filter(function (suggestion) {
                   return (suggestion.string || '').indexOf(typed) === 0;
-                }).slice(0, 10);
+                }).slice(0, 10).sort(function (a, b) {
+                  return a.string > b.string ? 1 : a.string < b.string ? -1 : 0;
+                });
                 _this.suggestions = _this.suggestionObjects.map(function (sug) {
                   return sug.string;
                 });
@@ -130,7 +132,7 @@ define('extplug/advanced-autocomplete/main',['require','exports','module','meld'
           } else {
             start = start + 1;
           }
-          return [start + 1, caret];
+          return [start + trigger.length, caret];
         }
       });
 
@@ -198,6 +200,18 @@ define('extplug/advanced-autocomplete/main',['require','exports','module','meld'
           return sug;
         });
         return o;
+      })
+      // sort by trigger length, so longer triggers get checked for
+      // completions _after_ shorter triggers.
+      // this way longer triggers will overwrite shorter triggers.
+      // this is useful for a kind of multiple-autocomplete, for example for a
+      // room bot with a "!ban" command:
+      // ! triggers "!mute" and "!ban",
+      // !ban triggers "!ban perma", "!ban day" and "!ban hour"
+      // now if the user completes "!ban", autocomplete will switch to using
+      // the !ban trigger, and offer suggestions for "perma", "hour" and "day"
+      .sort(function (a, b) {
+        return a.trigger.length - b.trigger.length;
       });
     }
 
