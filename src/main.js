@@ -78,11 +78,19 @@ define(function (require, exports, module) {
             this.suggestionObjects && this.suggestionObjects.length > 0) {
           // not users, nor emoji: this is a custom suggestion list
           let items = this.suggestionObjects.map((suggestion, i) => {
-            return $(templateItem({
+            let el = $(templateItem({
               value: this.type + suggestion.string,
               index: i,
               image: plugin.getImage(suggestion)
             })).mousedown(this.pressBind).mouseenter(this.overBind)
+            if (suggestion.description) {
+              el.find('.value').append(
+                ' ',
+                $('<span />').addClass('extplug-ac-descr')
+                             .text(suggestion.description)
+              )
+            }
+            return el
           })
           this.$itemContainer
             .empty()
@@ -129,8 +137,8 @@ define(function (require, exports, module) {
         }
       })
 
-      // thingy to center small icons semi-properly
       this.Style({
+        // thingy to center small icons semi-properly
         '.extplug-ac-centering': {
           'display': 'flex',
           'align-items': 'center',
@@ -141,6 +149,10 @@ define(function (require, exports, module) {
             'display': 'block',
             'position': 'static'
           }
+        },
+        // suggestion option description text
+        '.extplug-ac-descr': {
+          'color': '#808691'
         }
       })
     },
