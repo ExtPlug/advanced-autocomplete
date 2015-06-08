@@ -185,6 +185,16 @@ define(function (require, exports, module) {
             })
           return o
         })
+        // sort by trigger length, so longer triggers get checked for
+        // completions _after_ shorter triggers.
+        // this way longer triggers will overwrite shorter triggers.
+        // this is useful for a kind of multiple-autocomplete, for example for a
+        // room bot with a "!ban" command:
+        // ! triggers "!mute" and "!ban",
+        // !ban triggers "!ban perma", "!ban day" and "!ban hour"
+        // now if the user completes "!ban", autocomplete will switch to using
+        // the !ban trigger, and offer suggestions for "perma", "hour" and "day"
+        .sort((a, b) => a.trigger.length - b.trigger.length)
     }
 
   })
