@@ -26,17 +26,33 @@ You can add custom autocomplete suggestions to your room by adding an
 should contain an Array of "Completion" objects, defining different trigger
 characters and autocomplete suggestions.
 
-A Completion object looks like:
+A Completion object comes in two flavours:
 
-```javascript
-{
-  "trigger": "!",
-  "suggestions": [ /* ... */ ]
-}
-```
+ * a preset. This style uses one of the built-in autocomplete packages in the
+   plugin. Currently, it only contains a preset for [basicBot commands](https://github.com/Yemasthui/basicBot/blob/master/commands.md):
 
-When a user types the string in the `trigger` property, the given suggestions
-start to show up.
+   ```json
+   { "preset": "basicbot" }
+   ```
+
+   This will add all the basicBot commands to the `!` trigger.
+
+ * a custom suggestions list. This style allows you to add your own suggestions.
+
+   ```javascript
+   {
+     "trigger": "!",
+     "suggestions": [ /* ... */ ]
+   }
+   ```
+
+   See [Custom Suggestions](#custom-suggestions) for possible formats for the
+   `suggestions` property.
+
+   When a user types the string in the `trigger` property, the given suggestions
+   start to show up.
+
+### Custom Suggestions
 
 The `suggestions` property contains an Array of possible suggestions. These
 suggestions can be:
@@ -75,6 +91,8 @@ suggestions can be:
   }
   ```
 
+### Example
+
 Full example, with bot commands using a `!` trigger and "emote" commands
 (perhaps turned into images by a different plugin) using a `%` trigger:
 
@@ -93,6 +111,16 @@ Full example, with bot commands using a `!` trigger and "emote" commands
       "trigger": "%",
       "suggestions": [ "%shrug", "%lol", "%tableflip" ]
     }
+  ]
+}
+```
+
+If you are running basicBot, you can just use:
+
+```json
+{
+  "autocomplete": [
+    { "preset": "basicbot" }
   ]
 }
 ```

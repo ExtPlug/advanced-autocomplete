@@ -8,6 +8,10 @@ define(function (require, exports, module) {
   // prevent r.js from optimising this (:
   const templateItem = (0, require)('hbs!templates/room/chat/ChatSuggestionItem')
 
+  const presets = {
+    basicbot: require('./presets/basicbot')
+  }
+
   // kinda random, height of a single suggestion item according to plug.dj
   const ITEM_HEIGHT = 38
 
@@ -165,7 +169,12 @@ define(function (require, exports, module) {
       // clean up autocomplete settings
       this.completions = completions
         // remove invalid entries
-        .filter(comp => comp && !!comp.trigger && isArray(comp.suggestions))
+        .filter(comp => comp && (!!comp.preset ||
+                                 !!comp.trigger && isArray(comp.suggestions)))
+        // resolve presets
+        .map(comp => comp.preset && comp.preset in presets
+                   ? extend({}, presets[comp.preset] || {}, comp)
+                   : comp)
         .map(o => {
           // clean up suggestions lists
           o.suggestions = o.suggestions
