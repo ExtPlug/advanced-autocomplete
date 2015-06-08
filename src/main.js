@@ -48,7 +48,7 @@ define(function (require, exports, module) {
 
           if (start !== -1) {
             this.type = o.trigger
-            let typed = message.substr(start + 1)
+            let typed = message.substr(start + o.trigger.length)
             if (typed.length >= 1) {
               this.suggestionObjects = o.suggestions.filter(suggestion => {
                 return (suggestion.string || '').indexOf(typed) === 0
@@ -118,7 +118,7 @@ define(function (require, exports, module) {
           else {
             start = start + 1
           }
-          return [ start + 1, caret ]
+          return [ start + trigger.length, caret ]
         }
       })
 
