@@ -1,8 +1,19 @@
 
 
+define('extplug/advanced-autocomplete/presets/basicbot',{
+  "trigger": "!",
+  // commands taken from
+  // https://github.com/Yemasthui/basicBot/blob/master/commands.md
+  "suggestions": [{ "string": "afklimit", "icon": "icon-chat-manager", "role": 3 }, { "string": "botname", "icon": "icon-chat-manager", "role": 3 }, { "string": "clearchat", "icon": "icon-chat-manager", "role": 3 }, { "string": "cycle", "icon": "icon-chat-manager", "role": 3 }, { "string": "cycletimer", "icon": "icon-chat-manager", "role": 3 }, { "string": "language", "icon": "icon-chat-manager", "role": 3 }, { "string": "locktimer", "icon": "icon-chat-manager", "role": 3 }, { "string": "logout", "icon": "icon-chat-manager", "role": 3 }, { "string": "refresh", "icon": "icon-chat-manager", "role": 3 }, { "string": "usercmdcd", "icon": "icon-chat-manager", "role": 3 }, { "string": "usercommands", "icon": "icon-chat-manager", "role": 3 }, { "string": "voteskip", "icon": "icon-chat-manager", "role": 3 }, { "string": "add", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "afkremoval", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "autoskip", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "bouncer+", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "deletechat", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "lock", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "lockdown", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "maxlength", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "move", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "remove", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "roulette", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "songstats", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "unlock", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "welcome", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "active", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "afkreset", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "afktime", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "autodisable", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "ban", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "blacklist", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "blinfo", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "cycleguard", "icon": "icon-chat-bouncer", "role": 2 },
+  // !dclookup @user
+  // { "string": "dclookup",       "icon": "icon-chat-bouncer", "role": 2 },
+  { "string": "english", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "filter", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "forceskip", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "jointime", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "kick", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "kill", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "lockguard", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "lockskip", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "motd", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "mute", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "reload", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "restricteta", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "sessionstats", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "skip", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "skippos", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "status", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "timeguard", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "togglebl", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "togglemotd", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "togglevoteskip", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "unban", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "unmute", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "voteratio", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "whois", "icon": "icon-chat-bouncer", "role": 2 }, { "string": "8ball", "icon": "icon-community-users" }, { "string": "autowoot", "icon": "icon-community-users" }, { "string": "ba", "icon": "icon-community-users" }, { "string": "commands", "icon": "icon-community-users" }, { "string": "cookie", "icon": "icon-community-users" }, { "string": "dclookup", "icon": "icon-community-users" }, { "string": "emoji", "icon": "icon-community-users" }, { "string": "eta", "icon": "icon-community-users" }, { "string": "fb", "icon": "icon-community-users" }, { "string": "ghostbuster", "icon": "icon-community-users" }, { "string": "gif", "icon": "icon-community-users" }, { "string": "help", "icon": "icon-community-users" }, { "string": "join", "icon": "icon-community-users" }, { "string": "leave", "icon": "icon-community-users" }, { "string": "link", "icon": "icon-community-users" }, { "string": "op", "icon": "icon-community-users" }, { "string": "ping", "icon": "icon-community-users" }, { "string": "purchase", "icon": "icon-community-users" }, { "string": "rules", "icon": "icon-community-users" }, { "string": "theme", "icon": "icon-community-users" }, { "string": "website", "icon": "icon-community-users" }, { "string": "youtube", "icon": "icon-community-users" }]
+});
+
+
 function _slicedToArray(arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i['return']) _i['return'](); } finally { if (_d) throw _e; } } return _arr; } else { throw new TypeError('Invalid attempt to destructure non-iterable instance'); } }
 
-define('extplug/advanced-autocomplete/main',['require','exports','module','meld','underscore','extplug/Plugin','plug/views/rooms/chat/ChatSuggestionView','plug/views/rooms/chat/ChatView'],function (require, exports, module) {
+define('extplug/advanced-autocomplete/main',['require','exports','module','meld','underscore','extplug/Plugin','plug/views/rooms/chat/ChatSuggestionView','plug/views/rooms/chat/ChatView','./presets/basicbot'],function (require, exports, module) {
   var _require = require('meld');
 
   var around = _require.around;
@@ -17,6 +28,10 @@ define('extplug/advanced-autocomplete/main',['require','exports','module','meld'
   var ChatView = require('plug/views/rooms/chat/ChatView');
   // prevent r.js from optimising this (:
   var templateItem = (0, require)('hbs!templates/room/chat/ChatSuggestionItem');
+
+  var presets = {
+    basicbot: require('./presets/basicbot')
+  };
 
   // kinda random, height of a single suggestion item according to plug.dj
   var ITEM_HEIGHT = 38;
@@ -175,7 +190,11 @@ define('extplug/advanced-autocomplete/main',['require','exports','module','meld'
       this.completions = completions
       // remove invalid entries
       .filter(function (comp) {
-        return comp && !!comp.trigger && isArray(comp.suggestions);
+        return comp && (!!comp.preset || !!comp.trigger && isArray(comp.suggestions));
+      })
+      // resolve presets
+      .map(function (comp) {
+        return comp.preset && comp.preset in presets ? extend({}, presets[comp.preset] || {}, comp) : comp;
       }).map(function (o) {
         // clean up suggestions lists
         o.suggestions = o.suggestions
