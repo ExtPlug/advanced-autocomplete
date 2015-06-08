@@ -50,9 +50,12 @@ define(function (require, exports, module) {
             this.type = o.trigger
             let typed = message.substr(start + o.trigger.length)
             if (typed.length >= 1) {
-              this.suggestionObjects = o.suggestions.filter(suggestion => {
-                return (suggestion.string || '').indexOf(typed) === 0
-              }).slice(0, 10)
+              this.suggestionObjects = o.suggestions
+                .filter(suggestion => (suggestion.string || '').indexOf(typed) === 0)
+                .slice(0, 10)
+                .sort((a, b) => a.string > b.string ? 1
+                              : a.string < b.string ? -1
+                              : 0)
               this.suggestions = this.suggestionObjects.map(sug => sug.string)
             }
             else {
