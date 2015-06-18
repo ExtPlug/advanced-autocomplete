@@ -1,5 +1,5 @@
 { "name": "extplug-advanced-autocomplete"
-, "version": "0.1.0"
+, "version": "0.1.1"
 , "description": "ExtPlug plugin that adds custom autocomplete options to the chat using the current room settings."
 , "license": "MIT"
 , "main": "build/advanced-autocomplete"
