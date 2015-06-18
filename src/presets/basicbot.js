@@ -45,6 +45,7 @@ define({
     { "string": "filter",         "icon": "icon-chat-bouncer", "role": 2 },
     { "string": "forceskip",      "icon": "icon-chat-bouncer", "role": 2 },
     { "string": "jointime",       "icon": "icon-chat-bouncer", "role": 2 },
+    { "string": "historyskip",    "icon": "icon-chat-bouncer", "role": 2 },
     { "string": "kick",           "icon": "icon-chat-bouncer", "role": 2 },
     { "string": "kill",           "icon": "icon-chat-bouncer", "role": 2 },
     { "string": "lockguard",      "icon": "icon-chat-bouncer", "role": 2 },
