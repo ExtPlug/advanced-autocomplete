@@ -65,6 +65,8 @@ suggestions can be:
        user selects the suggestion.
      * an `icon` property, containing an icon className that will be shown to
        the left of the suggestion.
+     * a `description` property, containing a super-short description of the
+       suggestion that will be displayed next to the suggestion in the list.
      * a `role` property that hides the suggestion from users below the given
        rank. Note that this should be a Number! (Summary: 0 = No rank,
        1 = Resident DJ, 2 = Bouncer, 3 = Manager, 4 = Cohost, 5 = Host)
