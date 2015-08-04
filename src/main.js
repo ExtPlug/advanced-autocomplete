@@ -21,11 +21,30 @@ define(function (require, exports, module) {
                  'settings. Room owners might use this for bot commands or ' +
                  'silly memes.',
 
+    style: {
+      // thingy to center small icons semi-properly
+      '.extplug-ac-centering': {
+        'display': 'flex',
+        'align-items': 'center',
+        'justify-content': 'center',
+        'height': '100%',
+
+        'i.icon': {
+          'display': 'block',
+          'position': 'static'
+        }
+      },
+      // suggestion option description text
+      '.extplug-ac-descr': {
+        'color': '#808691'
+      }
+    },
+
     enable() {
       const plugin = this
 
       this.onUpdate()
-      this.ext.roomSettings.on('change:autocomplete', this.onUpdate, this)
+      this.listenTo(this.ext.roomSettings, 'change:autocomplete', this.onUpdate)
 
       // builds a suggestions array for the current input text
       this._checkAdvice = around(SuggestionView.prototype, 'check', function (joinpoint) {
@@ -136,32 +155,12 @@ define(function (require, exports, module) {
           return [ start + trigger.length, caret ]
         }
       })
-
-      this.Style({
-        // thingy to center small icons semi-properly
-        '.extplug-ac-centering': {
-          'display': 'flex',
-          'align-items': 'center',
-          'justify-content': 'center',
-          'height': '100%',
-
-          'i.icon': {
-            'display': 'block',
-            'position': 'static'
-          }
-        },
-        // suggestion option description text
-        '.extplug-ac-descr': {
-          'color': '#808691'
-        }
-      })
     },
 
     disable() {
       this._checkAdvice.remove()
       this._updateAdvice.remove()
       this._rangeAdvice.remove()
-      this.ext.roomSettings.off('change:autocomplete', this.onUpdate)
     },
 
     // builds image HTML for a given suggestion
