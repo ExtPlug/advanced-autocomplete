@@ -3,11 +3,23 @@
   "version": "0.2.0",
   "description": "ExtPlug plugin that adds custom autocomplete options to the chat using the current room settings.",
   "license": "MIT",
-  "main": "build/advanced-autocomplete",
+  "author": "ReAnna <renee@kooi.me>",
+  "repository": "extplug/advanced-autocomplete",
+  "main": "build/advanced-autocomplete.js",
+  "files": [
+    "build",
+    "src"
+  ],
+  "keywords": [
+    "extplug-plugin",
+    "plug.dj",
+    "autocomplete"
+  ],
   "devDependencies": {
     "extplug-cli": "^1.0.0"
   },
   "scripts": {
+    "prepublishOnly": "npm run build -- --minify",
     "build": "extplug bundle src/main.js build/advanced-autocomplete.js"
   }
 }
