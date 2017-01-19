@@ -4,7 +4,7 @@ Advanced Autocomplete
 ExtPlug plugin that adds additional autocomplete suggestions based on room
 settings, for example to provide autocompletion for bot commands.
 
-| ![Example using basicBot commands](http://i.imgur.com/hBMuB5F.png) |
+| ![Example using basicBot commands](./img/basicbot.png) |
 |----------------|
 | Example using basicBot commands. |
 
@@ -131,12 +131,19 @@ If you are running basicBot, you can just use:
 
 **Note: this section is intended for developers only.**
 
-This plugin uses NPM for dependency management and `gulp` for building.
+First, install dependencies:
 
-```
+```bash
 npm install
-gulp build
 ```
+
+Then, use:
+
+```bash
+npm run build
+```
+
+The plugin will be built using the [ExtPlug CLI](https://github.com/extplug/extplug-cli).
 
 The built plugin will be stored at `build/advanced-autocomplete.js`.
 
