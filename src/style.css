@@ -1,0 +1,17 @@
+/* thingy to center small icons */
+.extplug-ac-centering {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  & i.icon {
+    display: block;
+    position: static;
+  }
+}
+
+/* suggestion option description text */
+.extplug-ac-descr {
+  color: #808691;
+}
