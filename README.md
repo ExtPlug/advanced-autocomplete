@@ -1,6 +1,8 @@
 Advanced Autocomplete
 =====================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/extplug/advanced-autocomplete.svg)](https://greenkeeper.io/)
+
 ExtPlug plugin that adds additional autocomplete suggestions based on room
 settings, for example to provide autocompletion for bot commands.
 
