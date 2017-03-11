@@ -157,6 +157,11 @@ export default Plugin.extend({
   // (without things that are irrelevant to the user etc)
   onUpdate() {
     let completions = this.ext.roomSettings.get('autocomplete') || []
+    if (!Array.isArray(completions)) {
+      // TODO support RCS-style autocomplete, too
+      return
+    }
+
     // clean up autocomplete settings
     this.completions = completions
       // remove invalid entries
